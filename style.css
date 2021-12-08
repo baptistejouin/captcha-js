@@ -1,0 +1,153 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: sans-serif;
+	/* margin: 1em; */
+}
+.container {
+	max-width: 900px;
+	margin: 42px auto;
+}
+h1 {
+	margin-bottom: 1em;
+}
+label,
+input {
+	display: block;
+	width: 100%;
+}
+::placeholder {
+	font-weight: 500;
+}
+label + input {
+	margin-top: 1em;
+}
+label {
+	font-weight: 600;
+}
+input {
+	height: 24px;
+	padding: 1.2em 0.5em;
+	font: inherit;
+}
+fieldset {
+	margin: 1em 0;
+	border: 0;
+}
+.form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 20px;
+}
+.captcha-content {
+	display: flex;
+	justify-content: space-between;
+}
+.proposals {
+	list-style-type: none;
+	counter-reset: css-counter 0;
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	width: 45%;
+}
+.proposal-item {
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+.proposal-preview {
+	padding: 0 1em;
+	font-weight: 600;
+	font-size: 1.3rem;
+	color: #fc6307;
+	margin-left: 33px;
+}
+.proposal-preview > img {
+	max-height: 66px;
+	object-fit: contain;
+}
+.proposal {
+	width: 100%;
+	position: relative;
+	padding: 1.5em 1em;
+	max-height: 66px;
+	background-color: #eaeaea;
+	cursor: pointer;
+	font-weight: 600;
+	counter-increment: css-counter 1;
+}
+
+.proposal.active {
+	background-color: #fc6307;
+	color: white;
+}
+.proposal.active::after {
+	border-left-color: #fc6307;
+}
+.proposal::after {
+	content: '';
+	position: absolute;
+	right: -33px;
+	top: 0;
+	border-top: 33px solid transparent;
+	border-bottom: 33px solid transparent;
+	border-left: 33px solid #eaeaea;
+}
+.proposal-text::before {
+	content: counter(css-counter) '. ';
+}
+.photos {
+	width: 48%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 5px;
+	height: fit-content;
+}
+.photo {
+	object-fit: contain;
+	max-width: calc((100% / 3) - 5px);
+	height: auto;
+}
+.btn {
+	background-color: black;
+	cursor: pointer;
+	color: white;
+	border: 0;
+	width: fit-content;
+	font-size: 1rem;
+	padding: 1em 1.75em;
+}
+.error {
+	color: red;
+}
+.modal {
+	display: none;
+	position: fixed;
+	align-items: center;
+	justify-content: center;
+	inset: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+.modal > .container {
+	margin: 0;
+	max-width: unset;
+	width: 40%;
+	max-width: 500px;
+	/* height: 400px; */
+	background-color: white;
+	padding: 2rem 1rem;
+}
+.modal .condition p {
+	margin: 1rem 0 0.5rem 0;
+}
+.modal .condition li {
+	margin-left: 1.7rem;
+}

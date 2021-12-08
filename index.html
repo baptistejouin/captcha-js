@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Support 5</title>
+		<script src="./app.js" defer></script>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<h1>Mot de passe</h1>
+			<form action="" class="form">
+				<fieldset>
+					<label for="email">Indiquez votre compte Orange</label>
+					<input type="text" id="email" name="email" placeholder="Adresse email ou n° de mobile Orange" />
+				</fieldset>
+				<div class="captcha">
+					<p class="question">Cliquez sur les photos dans l'ordre indiqué :</p>
+					<div class="captcha-content">
+						<fieldset class="proposals"></fieldset>
+						<div class="photos"></div>
+					</div>
+				</div>
+				<div class="captcha-result"></div>
+				<button class="btn" type="submit" id="submit">Continuer</button>
+			</form>
+		</div>
+		<template id="template-proposal-item">
+			<div class="proposal-item">
+				<p class="proposal proposal-text" data-proposal="1"></p>
+				<div class="proposal-preview">?</div>
+			</div>
+		</template>
+		<template id="template-photo">
+			<img class="photo" src="" alt="" data-image="" />
+		</template>
+		<div class="modal">
+			<div class="container">
+				<form action="">
+					<label for="password">Veuillez entrer votre mot de passe</label>
+					<input type="password" name="password" id="password" placeholder="Mot de passe">
+					<div class="condition">
+
+						<p>Votre mot de passe doit contenir :</p>
+						<ul>
+							<li class="error" id="cmaj">Au moins une lettre majuscule</li>
+							<li class="error" id="cmin">Au moins une lettre minuscule</li>
+							<li class="error" id="cd">Au moins un chiffre</li>
+							<li class="error" id="cn">Au moins 8 caractères</li>
+						</ul>
+					</div>
+					<button class="btn" type="submit">Continuer</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
